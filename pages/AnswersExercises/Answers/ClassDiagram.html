@@ -42,20 +42,23 @@
 
 				<!-- Main -->
 					<div id="main" class="alt">
-
 						<!-- One -->
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h2>Final Projects Evaluation</h2>
+										<h2>Class Diagram Output</h2>
 									</header>
-									<span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-									<li><a href="Answers/SystemDesignAssignment.html">System Design Assignment</a></li>
-									<li><a href="Answers/SystemImplementationAssignment.html">System Implementation Assignment</a></li>
-									<p></p>
+										<img src="../../../images/classDiagram.PNG" alt="test" />
+									<p>This diagram represents a class diagram for an Online Super Market. An assumption I made was that this super market is fully online. </p>
+									<p>The customer class stores mandatory attributes to complete the transaction as well as some functions. There is a 0.. * relationship as the customer may not
+                                        have a credit card (loyalty points). The many is used because a customer might want to split the bill between two credit cards. </p>
+									<p>The customer and the shopping cart class has a Composite relationship as the shopping cart would not exist without the customer. The checkout has
+                                        a composite relationship with the shopping cart as the checkout would not exist without the shopping cart. However the product and shopping cart has
+                                        an aggregate relationship as the products will exist without the shopping cart. 
+                                    </p>
+
 								</div>
 							</section>
-
 					</div>
 
 				<!-- Contact -->
