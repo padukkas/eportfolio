@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sathira Padukka</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="../../index.html" class="logo"><strong>Sathira Padukka</strong> <span>CCSK, ITIL</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">About Me</a></li>
+							<li><a href="LaunchingintoComputerScience.html">Launching into Computer Science</a></li>
+							<li><a href="ObjectOrientedInformationSystems.html">Object-oriented Information Systems</a></li>
+							<li><a href="NetworkAndInformationSecurityManagement.html">Network and Information Security Management</a></li>
+							<li><a href="SecureSoftwareDevelopment.html">Secure Software Development (Computer Science)</a></li>
+							<li><a href="ResearchMethodsandProfessionalPractice.html">Research Methods and Professional Practice</a></li>
+							<li><a href="SoftwareEngineeringProjectManagement.html">Software Engineering Project Management</a></li>
+							<li><a href="MScComputingProject.html">MSc Computing Project</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>System Design Assignment</h2>
+									</header>
+									<p><b><u>Question:</u></b></p>
+									<p>This is a development exercise where you are required to implement an object-oriented system.
+										You are acting as a consultant software developer for a local doctors’ surgery, who have had a system design created by a software architect. 
+										It is your job to implement their design using an object-oriented approach, using Python.
+
+
+                                    </p>
+									<img src="../../../images/SystemImplementationAssignmentQuestion.PNG" alt="test" />
+
+									<p><b><u>Code Zip File</u></b></p>
+									<p>Code for the application is attached <a href="../../../assets/python-development.zip"><b>here</b></a>.</p>
+									<p><b><u>Test run</u></b></p>
+										<img src="../../../images/SystemImplementationAssignmentAnswer.PNG" alt="test" />
+									<p></p>
+									<p><b><u>README</u></b></p>
+									<p>This program was developed for a doctor’s clinic to manage doctor, nurse and patient interactions as well as appointments. The application was developed using python along with Object Oriented Programming techniques such as inheritance, polymorphism, etc. </p>
+
+										<p>In order to run the application, the main.py acts as the interface to interact with all the classes and functions. </p> 
+										
+										<p>The healthcareprofessional class is handling the ViewAppointment and Consultation functions. The consultation function will look for the next available appointment (logic in appointmentSchedule). If there's still appointments scheduled for today, we will 'consult', mark the appointment as complete, and return our 'consultation'. Since it is not clearly defined what exactly consultation should do and because patients can sometimes require prescriptions, I decided to return a random set of prescriptions. These are just "suggestions'' as the nurse cannot actually issue prescriptions. Doctor class contains the IssuePrescription function which verifies if the patient belongs to said doctor, if so then issues the prescription, the RegisterPatient function will check if the patient has a doctor if not the doctor will register the patient to themselves if they have less than 500 patients. </p>
+										
+										<p>The Patient class can requestRepeat which checks if the patient has a pre-existing prescription, if so, it will issue a refill request. A patient can request a new appointment or cancel an existing one. Once requested, the receptionist will have the ability to book/cancel and confirm the dates. </p>
+										
+										<p>The appointmentschedule class acts as the scheduler. The AddAppointment function will call the GetNextAvailability function which if it is a standard appointment, book within 7 days, and if it is a emergency book for today. I added the ability to override and book standard appointments for today so I can test standard appointments. The FindNextAvailable function will first sort by the appointmentType (getting emergency first) and then check if the appointment is not completed as well as check if it is booked for today, after which it will assign the staff member. CancelAppointment function will remove the appointment from the appointments list. </p>
+										
+										<p>The receptionist interacts with patients and confirms/cancels their appointments through the makeAppointment and cancelAppointment functions which interact with the appointmentschedule class.</p>
+									
+									<p><b><u>Evaluation</u></b></p>
+									<p>This was an interesting assignment as we had to develop the application based off of a class diagram. Since the previous assignment was to develop a class and object diagram, I was clear on how to interpret classes and relationships in a class diagram. I applied object-oriented methodologies such as inheritance, polymorphism, etc. The ways I can improve on this code is to make it interactable through the terminal via an API and add a database layer so the data can dynamic rather than static.  </p>
+									
+
+								</div>
+							</section>
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="#">sathira.padukka@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(289) 681-7858</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Postmaster Drive<br />
+									Oakville, ON L6M 5A8<br />
+									Canada</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons" style="text-align:center">
+							<li><a href="https://github.com/padukkas" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/sathira-padukka-ccsk-itil-comptia-security-01447b16a/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Sathira Padukka</li>
+						</ul>
+					</div>
+				</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>

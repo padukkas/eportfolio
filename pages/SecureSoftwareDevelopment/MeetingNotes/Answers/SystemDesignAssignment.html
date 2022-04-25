@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sathira Padukka</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="../../index.html" class="logo"><strong>Sathira Padukka</strong> <span>CCSK, ITIL</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">About Me</a></li>
+							<li><a href="LaunchingintoComputerScience.html">Launching into Computer Science</a></li>
+							<li><a href="ObjectOrientedInformationSystems.html">Object-oriented Information Systems</a></li>
+							<li><a href="NetworkAndInformationSecurityManagement.html">Network and Information Security Management</a></li>
+							<li><a href="SecureSoftwareDevelopment.html">Secure Software Development (Computer Science)</a></li>
+							<li><a href="ResearchMethodsandProfessionalPractice.html">Research Methods and Professional Practice</a></li>
+							<li><a href="SoftwareEngineeringProjectManagement.html">Software Engineering Project Management</a></li>
+							<li><a href="MScComputingProject.html">MSc Computing Project</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>System Design Assignment</h2>
+									</header>
+									<p><b><u>Question:</u></b></p>
+									<p>You have been asked to design a new software system to manage self- service checkouts at a well-known high street supermarket chain. 
+
+										When an item is scanned, it is added to the customers purchases in a virtual shopping basket. Items can either be scanned with the barcode reader or they can be weighed using the integrated scales. When the customer has finished scanning their items, they will be given the option to scan their loyalty card, if they have one. 
+										
+										The customer then purchases their items using several different payment methods (e.g., cash, card, ApplePay, AndroidPay, vouchers, loyalty points). Supermarket staff will have the ability to override transactions where required, for example if a price has been scanned incorrectly, they will also be responsible for checking the age of a customer for restricted items. 
+										
+										A completed transaction will update the supermarkets stock control systems and generate an alert for warehouse staff if either the shelves should be replenished or if stock needs to be reordered. 
+										
+										Using the scenario provided you are required to generate an object model for the proposed system.
+                                    </p>
+									<p><b><u>Class Diagram:</u></b></p>
+										<img src="../../../images/SystemDesignAssignmentClass.PNG" alt="test" />
+									<p>To initiate any transaction there is a “Customer” class, which contains multiple attributes and an operation. Customer has a direct association to the “Checkout Scanner” class. The “Customer” class also has a composite relationship with the “Loyalty Card” class which allows customers to collect points from instore purchases. The relationship between these two classes is composition because “Loyalty Card” would not exist without a customer.</p>
+										<p>“Checkout Scanner” class which allows the customer to scan/weigh item or scan loyalty card also has an aggregate relationship with “Virtual Shopping Cart” class because without the shopping cart the “Checkout Scanner” can exist just not used. The Scanner class has an association with the “Loyalty Card” class since the same scanner is used to scan the loyalty card. </p>
+										<p>“Virtual Shopping Cart” class which holds the items until the customer makes the payment has a composite relationship with the “Item” class since the shopping cart would not exist without items. When items are added to the shopping cart there is the option to request assistance to override items or for the restricted items, these are stored as attributes in the “Item” class. “Virtual Shopping Cart” class has a direct associate with the “Payment processor” class, since after all the items are added to cart the next step would be to process the payment.</p>
+										<p>While “Item” class which contains the item information requires a composite relationship with the “Virtual Shopping Cart” class, it has an associate relationship with the “Inventory System” class, as an item is added to a shopping cart it will keep count so the system can know when that item runs out of stock in the shelves.</p>
+										The “Inventory System” class has a direct associate relationship with the “Payment Processor” class since when the payment goes through that item has to be deducted from the inventory. The “Inventory system” class also has an aggregate relationship with the “Warehouse” to “notify” the warehouse once the items are all out of stock in the entire store which would trigger the “Warehouse Staff” class to “reorder” the item to the warehouse.
+										<p>“Payment Processor” class has a composite relationship with the “Payment Method” class since the payment method would not exists without the payment processor. The “Payment Method” class has direct association to all the methods of payment types such as Cash, Credit Card, Apple pay and etc. “Apple pay” and “Android pay” uses inheritance from credit card as credit card information that is being added to those devices. Customer can pay with their Loyalty points therefore “Loyalty Points” class uses inheritance from “Loyalty Card” class. </p>
+										<p>There are two Staff classes, “Warehouse Staff” and “Floor Staff”. “Warehouse Staff” has an aggregate relationship with the “Warehouse” class, since the warehouse can exist without the warehouse staff. “Warehouse staff” class also has a direct association to the “Item” class as the Warehouse Staff “restocks” items once they run out said item on the shelves. The “Floor Staff” class has a direct association with the “Virtual Shopping Cart” class, as the floor staff has to override items in the shopping cart and to handle customers when they add restricted items to the cart.
+										</p>
+									<p><b><u>Object Diagram:</u></b></p>
+										<img src="../../../images/SystemDesignAssignmentObject.PNG" alt="test" />
+									<p></p>
+									<p><b><u>Evaluation</u></b></p>
+									<p>This was an interesting assignment since developing UML diagrams are subjective to everyone’s opinion on the approach, therefore I am not sure if there is one correct answer. However, I got to learn to pay attention the direction the relationship arrows are pointing and also to simply the class and object diagrams. </p>
+
+								</div>
+							</section>
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="#">sathira.padukka@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(289) 681-7858</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Postmaster Drive<br />
+									Oakville, ON L6M 5A8<br />
+									Canada</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons" style="text-align:center">
+							<li><a href="https://github.com/padukkas" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/sathira-padukka-ccsk-itil-comptia-security-01447b16a/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Sathira Padukka</li>
+						</ul>
+					</div>
+				</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
