@@ -1,0 +1,163 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Sathira Padukka</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="../../assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="../../index.html" class="logo"><strong>Sathira Padukka</strong> <span>CCSK, ITIL</span></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="aboutme.html">About Me</a></li>
+							<li><a href="LaunchingintoComputerScience.html">Launching into Computer Science</a></li>
+							<li><a href="ObjectOrientedInformationSystems.html">Object-oriented Information Systems</a></li>
+							<li><a href="NetworkAndInformationSecurityManagement.html">Network and Information Security Management</a></li>
+							<li><a href="SecureSoftwareDevelopment.html">Secure Software Development (Computer Science)</a></li>
+							<li><a href="ResearchMethodsandProfessionalPractice.html">Research Methods and Professional Practice</a></li>
+							<li><a href="SoftwareEngineeringProjectManagement.html">Software Engineering Project Management</a></li>
+							<li><a href="MScComputingProject.html">MSc Computing Project</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Cyclomatic Complexity Team Discussion</h2>
+									</header>
+									<p>The Cyclomatic Complexity is commonly considered in modules on testing the validity of code design today. However, in your opinion, should it be? Does it remain relevant today? Specific to the focus of this module, is it relevant in our quest to develop secure software? Justify all opinions which support your argument and share your responses with your team..</p>
+									<p><b>Discussion in Slack: </b></p>
+									<p><b>Alberto Rossotto </b></p>
+									<p>Cyclomatic complexity is a proxy for code quality. A function with high complexity is a function with a large number of independent paths. High complexity translates into more complex testing or poor test coverage. Complex testing requires high maintenance costs and is often neglected, while poor test coverage is associated with regressions.
+										Breaking complex functions into more functions lowers their complexity, and, from a practical perspective, nothing changes since the software will still perform the same operations. However, testing many simple functions is remarkably easier, and makes 100% coverage achievable.
+										I worked a lot on legacy software with very high complexity (in the range of hundreds), and the operation of refactoring the code to break it down to more manageable functions invariably reveals the existence of paths nobody was aware of. The question “is it a bug or a feature?” may sound funny, but the answer can have dramatic effects on the final software.
+										I usually recommend keeping the complexity below 5. With functional languages, it is also possible to aim for linear complexity in most of the components.
+										</p>
+									<p><b>Professor Cathryn </b></p>
+									<p>Very nicely expressed, Alberto.</p>
+									<p><b>Professor Cathryn </b></p>
+									<p>What about CC in the presence of microservices?</p>
+									<p><b>Alberto Rossotto </b></p>
+									<p>From a design perspective, microservices are the components of classic monoliths. The differences introduced by the microservice model focus on deployment, scalability, scope, and lifecycle, not on how developers code. When tasked to break down a monolith into microservices, the developers may even keep most of the code unchanged, especially in monoliths with components where the coupling is low, and cohesion is high.
+										There is the misconception that an architecture based on microservices is inherently simple, but it is quite the opposite.
+										Monoliths centralize the common functions (logging, authentication, authorization), while microservices tend to duplicate them. To promote code reuse, it is necessary to implement strategies such as creating an internal framework, which sounds easy but means managing its lifecycle across many small applications.
+										Deployment of microservices is also way more complex because it is no more just about deploying an artifact. Microservices need to be wired together by a communication infrastructure made by other microservices. Monoliths' components call each other passing references to memory. With microservices, even the simplest direct REST API requires at least a service to resolve the services' names and a circuit breaker managing timeouts.
+										Another big difference is that a monolith is either all up or all down. In a microservices architecture, some services may be temporarily unavailable or partially disrupted, and this needs to be considered in a design.
+										Summarizing. Considerations about code's cyclomatic complexity are unaffected by a shift towards microservices. However, microservices add a whole new category of complexity in the areas of deployment and orchestration.</p>
+									<p><b>Professor Cathryn </b></p>
+									<p>Thanks very much for sharing this interesting perspective, Alberto.</p>
+									<p><b>Bernhard van Renssen </b></p>
+									<p>Often when starting out as a developer (in my case, anyway), when looking at complex code, you get the feeling that complex code is very difficult to write, and produced by very advanced developers. The more time I spend studying and working as a software developer, the more I come to realize that it is actually the opposite that is true. As expressed by the famous Tim Peters in his “Zen of Python” – line 3 – “Simple is better than complex”.
+										Software that is easy to extend and cheaper to maintain, should rather be as simple as possible.
+										 As @Alberto Rossotto pointed out – ‘…from a practical perspective, nothing changes since the software will still perform the same operations. However, testing many simple functions is remarkably easier, and makes 100% coverage achievable”. This is a really underestimated concept that can easily be measured by simply refactoring the code, to not have a complexity of over 10 (as measured by Thomas McCabe’s metric invented almost 50 years ago).
+										Keeping the code complexity under 10 means that any new developer on the team will find it easier to understand the code ad get a grasp on what each function does, rather than spending large amounts of time trying to figure out what exactly the function should actually be doing. This also has a massive impact on debugging code, as specific blocks can quickly be isolated and debugged in isolation.</p>
+									<p><b>Sathira Padukka </b></p>
+									<p>Cyclomatic complexity is a metric that indicates the possible number of paths inside the program. The higher the cyclomatic complexity, higher the code complexity. Having a lower complexity is usually better. Higher the complexity translate to low test coverage.
+										When writing code, the simpler the better rather than having complex code. Making it easier it is for others to understand what is trying to be achieved, have good code coverage, have better testing and overall maintenance of the code.
+										In my experience some developers overlook the importance of testing, I write complex code which can be easily simplified. As their code is far more complicated than it needs to be they spend a substantial amount of time coding rather than spending a few hours writing some unit tests for their code.
+										In my opinion if a function is too complicated and too long it can be broken down into multiple small functions achieving the same functionality. Having a big and complex block of code makes it much harder to debug.</p>
+								</div>
+							</section>
+					</div>
+
+				<!-- Contact -->
+				<section id="contact">
+					<div class="inner">
+						<section>
+							<form method="post" action="#">
+								<div class="fields">
+									<div class="field half">
+										<label for="name">Name</label>
+										<input type="text" name="name" id="name" />
+									</div>
+									<div class="field half">
+										<label for="email">Email</label>
+										<input type="text" name="email" id="email" />
+									</div>
+									<div class="field">
+										<label for="message">Message</label>
+										<textarea name="message" id="message" rows="6"></textarea>
+									</div>
+								</div>
+								<ul class="actions">
+									<li><input type="submit" value="Send Message" class="primary" /></li>
+									<li><input type="reset" value="Clear" /></li>
+								</ul>
+							</form>
+						</section>
+						<section class="split">
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-envelope"></span>
+									<h3>Email</h3>
+									<a href="#">sathira.padukka@gmail.com</a>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-phone"></span>
+									<h3>Phone</h3>
+									<span>(289) 681-7858</span>
+								</div>
+							</section>
+							<section>
+								<div class="contact-method">
+									<span class="icon solid alt fa-home"></span>
+									<h3>Address</h3>
+									<span>Postmaster Drive<br />
+									Oakville, ON L6M 5A8<br />
+									Canada</span>
+								</div>
+							</section>
+						</section>
+					</div>
+				</section>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<ul class="icons" style="text-align:center">
+							<li><a href="https://github.com/padukkas" target="_blank" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
+							<li><a href="https://www.linkedin.com/in/sathira-padukka-ccsk-itil-comptia-security-01447b16a/" target="_blank" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+						</ul>
+						<ul class="copyright">
+							<li>&copy; Sathira Padukka</li>
+						</ul>
+					</div>
+				</footer>
+			</div>
+
+		<!-- Scripts -->
+			<script src="../../assets/js/jquery.min.js"></script>
+			<script src="../../assets/js/jquery.scrolly.min.js"></script>
+			<script src="../../assets/js/jquery.scrollex.min.js"></script>
+			<script src="../../assets/js/browser.min.js"></script>
+			<script src="../../assets/js/breakpoints.min.js"></script>
+			<script src="../../assets/js/util.js"></script>
+			<script src="../../assets/js/main.js"></script>
+
+	</body>
+</html>
