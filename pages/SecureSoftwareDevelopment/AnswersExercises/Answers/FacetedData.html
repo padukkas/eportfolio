@@ -41,20 +41,27 @@
 					</nav>
 
 				<!-- Main -->
-				<div id="main" class="alt">
-					<!-- One -->
-						<section id="one">
-							<div class="inner">
-								<header class="major">
-									<h2>Discussion 2 Reply 2</h2>
-								</header>
-								<p><b><u>Cryptography case study: TrueCrypt - Reply</u></b></p>
-								<p>Great post, I agree with you on the alternate solutions, such as VeraCrypt or BitLocker. Because TrueCrypt contains some unfixed security issues.
+					<div id="main" class="alt">
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h2>Faceted Data</h2>
+									</header>
+									<p><b>Do you think this is a good approach to protect systems from data leakage? What are the pros and cons?.</b></p>
 
-								<p>The findings of iSEC team presented 11 different issues. Four of the issues are medium severity, four low severity and 3 informational severity issues. Some of these issues are in different classes, Cryptography, Data exposure, Data validation, Denial of service and Error reporting related to TrueCrypt. Anyways TrueCrypt was discontinued in 2014 and was replaced with VeraCrypt  and other services.</p>
-							</div>
-						</section>
-				</div>
+									<p>Yes, I think this approach is more than capable of protecting the system for a data leak because facets, only contains functional units, which are independent of the data. It makes sure traditional information flow security property of termination-insensitive noninterference, independent of any bugs, vulnerabilities, or malicious code in the client application (Schmitz et al., 2016).</p>
+									<p>When handling user data that needs to manipulated by a developer or by someone else the application must always ensure that data does not get misused on purpose or by accident. Information flow controls require a developer to mark sensitive information, but otherwise automatically prevent any “leaks” of this data (Schmitz et al., 2016).</p>
+									<p>One of the advantages is that the code is independent of the data making the code more reliable as the code is not written with data inputs or data types in mind. The developer has the system to work with any type of data sets making the system more reliable.</p>
+									<p>One of the disadvantages I see is the lack of visibility for the developer. When debugging the code direct data injection is going to be difficult near impossible as the facets are segregated from the data.</p>
+
+									<p><b><u>References:</u></b></p>
+									<p>Schmitz, T., Rhodes, D., Austin, T.H., Knowles, K. and Flanagan, C. (2016). Faceted Dynamic Information Flow via Control and Data Monads. Lecture Notes in Computer Science, 9635, pp.3–23. doi:10.1007/978-3-662-49635-0_1.</p>
+
+								</div>
+								
+							</section>
+					</div>
 
 				<!-- Contact -->
 				<section id="contact">
